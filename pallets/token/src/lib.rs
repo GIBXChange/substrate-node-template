@@ -100,6 +100,7 @@ decl_module! {
 }
 
 impl<T: Trait> Module<T> {
+    ///发行货币
     pub fn do_issue(origin: T::Origin, symbol: Vec<u8>, total_supply: T::Balance) -> dispatch::DispatchResult {
         let sender = ensure_signed(origin)?;
 
@@ -124,12 +125,13 @@ impl<T: Trait> Module<T> {
         let owned_token_index = OwnedTokensIndex::<T>::get(sender.clone());
         OwnedTokens::<T>::insert((sender.clone(), owned_token_index), hash);
         OwnedTokensIndex::<T>::insert(sender.clone(), owned_token_index + 1);
-
+        //发布一个货币后发布一个事件,是进行全网广播么?
         Self::deposit_event(RawEvent::Issued(sender, hash.clone(), total_supply));
 
         Ok(())
     }
 
+    ///转账
     pub fn do_transfer(
         sender: T::AccountId,
         hash: T::Hash,
@@ -138,18 +140,20 @@ impl<T: Trait> Module<T> {
         memo: Option<Vec<u8>>,
     ) -> dispatch::DispatchResult {
         let token = Self::token(hash);
+        //确保token是存在的
         ensure!(token.is_some(), Error::<T>::NoMatchingToken);
-
+        //确保memo小于512个字节
         if let Some(memo) = memo {
             ensure!(memo.len() <= 512, Error::<T>::MemoLengthExceedLimitation);
         }
-
+        //确保发送者有该币种
         ensure!(
             <FreeBalanceOf<T>>::contains_key((sender.clone(), hash)),
             Error::<T>::SenderHaveNoToken 
         );
 
         let from_amount = Self::balance_of((sender.clone(), hash.clone()));
+        //确保发送者有足够的币量
         ensure!(from_amount >= amount, Error::<T>::BalanceNotEnough);
         let new_from_amount = from_amount - amount;
 
@@ -162,6 +166,7 @@ impl<T: Trait> Module<T> {
 
         let to_amount = Self::balance_of((to.clone(), hash.clone()));
         let new_to_amount = to_amount + amount;
+        //确保增加的币不超过接收方的最大值
         ensure!(
             new_to_amount <= T::Balance::max_value(),
             Error::<T>::AmountOverflow
@@ -182,6 +187,7 @@ impl<T: Trait> Module<T> {
         Ok(())
     }
 
+    //冻结用户的币
     pub fn do_freeze(sender: T::AccountId, hash: T::Hash, amount: T::Balance) -> dispatch::DispatchResult {
         let token = Self::token(hash);
         ensure!(token.is_some(), Error::<T>::NoMatchingToken);
@@ -205,7 +211,7 @@ impl<T: Trait> Module<T> {
 
         FreeBalanceOf::<T>::insert((sender.clone(), hash.clone()), old_free_amount - amount);
         FreezedBalanceOf::<T>::insert((sender.clone(), hash.clone()), old_freezed_amount + amount);
-
+        //冻结账户后发送广播事件,为啥转账不需要发送事件!?
         Self::deposit_event(RawEvent::Freezed(sender, hash, amount));
 
         Ok(())

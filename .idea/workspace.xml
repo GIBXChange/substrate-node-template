@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
+  <component name="CargoProjects">
+    <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c3bd2863-0b23-4a0f-a646-37a784d66004" name="Default Changelist" comment="add token test!!!">
+      <change beforePath="$PROJECT_DIR$/pallets/token/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/pallets/token/src/lib.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pallets/token/src/mock.rs" beforeDir="false" afterPath="$PROJECT_DIR$/pallets/token/src/mock.rs" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <branch-grouping />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="pmyac7rn" />
+  </component>
+  <component name="ProjectId" id="1ku5vd8ihUbXOLJjSaxNP1Ud9SI" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pallets/token/src" />
+    <property name="org.rust.cargo.project.model.PROJECT_DISCOVERY" value="true" />
+    <property name="settings.editor.selected.configurable" value="terminal" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\development\rust\substrate-node-template\pallets\token\src" />
+      <recent name="D:\development\rust\substrate-node-template\pallets\token" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Cargo Command.Test tests::token_tests">
+    <configuration name="Test tests::it_works_for_default_value" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="channel" value="DEFAULT" />
+      <option name="command" value="test --package pallet-template --lib tests::it_works_for_default_value -- --exact" />
+      <option name="allFeatures" value="false" />
+      <option name="emulateTerminal" value="false" />
+      <option name="backtrace" value="SHORT" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test tests::token_tests" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="channel" value="DEFAULT" />
+      <option name="command" value="test --package pallet-token --lib tests::token_tests -- --exact" />
+      <option name="allFeatures" value="false" />
+      <option name="emulateTerminal" value="false" />
+      <option name="backtrace" value="SHORT" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Cargo Command.Test tests::token_tests" />
+        <item itemvalue="Cargo Command.Test tests::it_works_for_default_value" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="RustProjectSettings">
+    <option name="toolchainHomeDirectory" value="$USER_HOME$/.cargo/bin" />
+    <option name="version" value="2" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c3bd2863-0b23-4a0f-a646-37a784d66004" name="Default Changelist" comment="" />
+      <created>1606537868578</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1606537868578</updated>
+    </task>
+    <task id="LOCAL-00001" summary="ffff">
+      <created>1606552447637</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1606552447637</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add pallet token">
+      <created>1606704765885</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1606704765885</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="ffff" />
+    <MESSAGE value="add pallet token" />
+    <MESSAGE value="add token test" />
+    <MESSAGE value="add token test!" />
+    <MESSAGE value="add token test!!!" />
+    <option name="LAST_COMMIT_MESSAGE" value="add token test!!!" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="692" y="256" key="#com.intellij.ide.util.MemberChooser" timestamp="1606736494368">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="692" y="256" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1606736494368" />
+    <state width="1709" height="281" key="GridCell.Tab.0.bottom" timestamp="1606738625789">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1709" height="281" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1606738625789" />
+    <state width="1709" height="281" key="GridCell.Tab.0.center" timestamp="1606738625789">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1709" height="281" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1606738625789" />
+    <state width="1709" height="281" key="GridCell.Tab.0.left" timestamp="1606738625789">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1709" height="281" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1606738625789" />
+    <state width="1709" height="281" key="GridCell.Tab.0.right" timestamp="1606738625789">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1709" height="281" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1606738625789" />
+    <state x="388" y="185" key="SettingsEditor" timestamp="1606707119566">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="388" y="185" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1606707119566" />
+    <state x="608" y="285" width="540" height="524" key="StructurePopup" timestamp="1606717208247">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="608" y="285" width="540" height="524" key="StructurePopup/0.0.2560.1400@0.0.2560.1400" timestamp="1606717208247" />
+    <state x="476" y="256" key="Vcs.Push.Dialog.v2" timestamp="1606704802717">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="476" y="256" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1606704802717" />
+    <state x="688" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606701556552">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="688" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1606701556552" />
+  </component>
+</project>

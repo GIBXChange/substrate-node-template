@@ -20,7 +20,9 @@ parameter_types! {
 	pub const MaximumBlockLength: u32 = 2 * 1024;
 	pub const AvailableBlockRatio: Perbill = Perbill::from_percent(75);
 }
+
 impl system::Trait for Test {
+	type BaseCallFilter = ();
 	type Origin = Origin;
 	type Call = ();
 	type Index = u64;
@@ -36,13 +38,17 @@ impl system::Trait for Test {
 	type DbWeight = ();
 	type BlockExecutionWeight = ();
 	type ExtrinsicBaseWeight = ();
+	type MaximumExtrinsicWeight = ();
 	type MaximumBlockLength = MaximumBlockLength;
 	type AvailableBlockRatio = AvailableBlockRatio;
 	type Version = ();
-	type ModuleToIndex = ();
+	type PalletInfo = ();
+	// type ModuleToIndex = ();
 	type AccountData = balances::AccountData<u128>;
 	type OnNewAccount = ();
+
 	type OnKilledAccount = ();
+	type SystemWeightInfo = ();
 }
 parameter_types! {
 	pub const ExistentialDeposit: u64 = 1;
@@ -53,7 +59,11 @@ impl balances::Trait for Test {
 	type Event = ();
 	type ExistentialDeposit = ExistentialDeposit;
 	type AccountStore = system::Module<Test>;
+
+	type WeightInfo = ();
+	type MaxLocks = ();
 }
+
 impl Trait for Test {
 	type Event = ();
 }
