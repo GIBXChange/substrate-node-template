@@ -29,7 +29,7 @@ fn token_tests() {
 		let alice = 10u64;
 		let bob = 20u64;
 		let charlie = 30u64;
-
+		//给alice创建一个6688的token,总量21000000
 		assert_ok!(TokenModule::issue(
 			Origin::signed(alice),
 			b"6688".to_vec(),
@@ -43,11 +43,13 @@ fn token_tests() {
 		let token = TokenModule::token(token_hash);
 		assert!(token.is_some());
 		let token = token.unwrap();
-
+		//alice的拥有的总量是21,000,000
 		assert_eq!(TokenModule::balance_of((alice, token.hash)), 21000000);
+		//alice的拥有的可用是21,000,000
 		assert_eq!(TokenModule::free_balance_of((alice, token.hash)), 21000000);
+		//alice的拥有冻结是0
 		assert_eq!(TokenModule::freezed_balance_of((alice, token.hash)), 0);
-
+		//alice给bob转账100
 		assert_ok!(TokenModule::transfer(
 			Origin::signed(alice),
 			token.hash,
@@ -61,15 +63,17 @@ fn token_tests() {
 		assert_eq!(TokenModule::balance_of((bob, token.hash)), 100);
 		assert_eq!(TokenModule::free_balance_of((bob, token.hash)), 100);
 		assert_eq!(TokenModule::freezed_balance_of((bob, token.hash)), 0);
-
+		//没有对应的币种.
 		assert_err!(
 			TokenModule::transfer(Origin::signed(bob), H256::from_low_u64_be(0), charlie, 101, None),
 			Error::<Test>::NoMatchingToken
 		);
+		//用户没有该币
 		assert_err!(
 			TokenModule::transfer(Origin::signed(charlie), token.hash, bob, 101, None),
 			Error::<Test>::SenderHaveNoToken
 		);
+		//用户金额不足
 		assert_err!(
 			TokenModule::transfer(Origin::signed(bob), token.hash, charlie, 101, None),
 			Error::<Test>::BalanceNotEnough
