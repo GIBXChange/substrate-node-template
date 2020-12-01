@@ -24,8 +24,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c3bd2863-0b23-4a0f-a646-37a784d66004" name="Default Changelist" comment="add token test!!!">
-      <change beforePath="$PROJECT_DIR$/pallets/token/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/pallets/token/src/lib.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pallets/token/src/mock.rs" beforeDir="false" afterPath="$PROJECT_DIR$/pallets/token/src/mock.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/substrate-node-template.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/substrate-node-template.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,12 +47,13 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pallets/token/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pallets/trade" />
     <property name="org.rust.cargo.project.model.PROJECT_DISCOVERY" value="true" />
     <property name="settings.editor.selected.configurable" value="terminal" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\development\rust\substrate-node-template\pallets\trade" />
       <recent name="D:\development\rust\substrate-node-template\pallets\token\src" />
       <recent name="D:\development\rust\substrate-node-template\pallets\token" />
     </key>
@@ -151,10 +153,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="add token test!!!" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="692" y="256" key="#com.intellij.ide.util.MemberChooser" timestamp="1606736494368">
+    <state x="692" y="256" key="#com.intellij.ide.util.MemberChooser" timestamp="1606822887975">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="692" y="256" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1606736494368" />
+    <state x="692" y="256" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1606822887975" />
     <state width="1709" height="281" key="GridCell.Tab.0.bottom" timestamp="1606738625789">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -187,5 +189,9 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="688" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1606701556552" />
+    <state x="550" y="247" width="672" height="678" key="search.everywhere.popup" timestamp="1606816414904">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="550" y="247" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1606816414904" />
   </component>
 </project>
