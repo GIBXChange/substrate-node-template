@@ -31,6 +31,7 @@ pub trait Trait: token::Trait + frame_system::Trait {
     type ClosedOrdersArrayCap: Get<u8>;
 }
 
+///交易对
 #[derive(Encode, Decode, Clone, PartialEq, Eq)]
 #[cfg_attr(feature = "std", derive(Debug))]
 pub struct TradePair<T> where T: Trait {
@@ -41,10 +42,11 @@ pub struct TradePair<T> where T: Trait {
     latest_matched_price: Option<T::Price>,
 
     one_day_trade_volume: T::Balance, // sum of quote qty
-    one_day_highest_price: Option<T::Price>,
-    one_day_lowest_price: Option<T::Price>,
+    one_day_highest_price: Option<T::Price>,//最高价
+    one_day_lowest_price: Option<T::Price>,//最低价
 }
 
+//交易方向
 #[derive(Encode, Decode, Debug, Clone, Copy, PartialEq, Eq)]
 pub enum OrderType {
     Buy,
@@ -53,7 +55,7 @@ pub enum OrderType {
 
 impl Not for OrderType {
     type Output = OrderType;
-
+    ///取反方向的交易单
     fn not(self) -> Self::Output {
         match self {
             OrderType::Sell => OrderType::Buy,
@@ -65,18 +67,19 @@ impl Not for OrderType {
 #[derive(Encode, Decode, Clone, PartialEq, Eq)]
 #[cfg_attr(feature = "std", derive(Debug))]
 pub enum OrderStatus {
-    Created,
-    PartialFilled,
-    Filled,
-    Canceled,
+    Created,//新建
+    PartialFilled,//部分成交
+    Filled,//全部成交
+    Canceled,//取消
 }
 
+///限价单,订单的定义
 #[derive(Encode, Decode, Clone, PartialEq, Eq)]
 #[cfg_attr(feature = "std", derive(Debug))]
 pub struct LimitOrder<T> where T: Trait {
-    pub hash: T::Hash,
-    pub base: T::Hash,
-    pub quote: T::Hash,
+    pub hash: T::Hash,//难道是订单号?
+    pub base: T::Hash,//基础币种例如BTC
+    pub quote: T::Hash,//标价币种:USDT
     pub owner: T::AccountId,
     pub price: T::Price,
     pub sell_amount: T::Balance,
@@ -87,6 +90,7 @@ pub struct LimitOrder<T> where T: Trait {
     pub status: OrderStatus,
 }
 
+///交易结果数据
 #[derive(Encode, Decode, Clone, PartialEq, Eq)]
 #[cfg_attr(feature = "std", derive(Debug))]
 pub struct Trade<T> where T: Trait {
@@ -103,7 +107,9 @@ pub struct Trade<T> where T: Trait {
     quote_amount: T::Balance, // quote token amount to exchange
 }
 
+///限价单的方法实现
 impl<T> LimitOrder<T> where T: Trait {
+    ///新建一个订单
     fn new(base: T::Hash, quote: T::Hash, owner: T::AccountId, price: T::Price, sell_amount: T::Balance,
            buy_amount: T::Balance, otype: OrderType) -> Self {
         let nonce = Nonce::get();
@@ -122,12 +128,14 @@ impl<T> LimitOrder<T> where T: Trait {
         }
     }
 
+    ///订单是否完成,如果订单剩余购买量为0并且订单的状态是已经填充或者订单是已取消状态.
     pub fn is_finished(&self) -> bool {
         (self.remained_buy_amount == Zero::zero() && self.status == OrderStatus::Filled) || self.status == OrderStatus::Canceled
     }
 }
 
 impl<T> Trade<T> where T: Trait {
+    ///创建一个交易记录,关联函数
     fn new(base: T::Hash, quote: T::Hash, maker_order: &LimitOrder<T>, taker_order: &LimitOrder<T>,
            base_amount: T::Balance, quote_amount: T::Balance) -> Self {
         let nonce = Nonce::get();
@@ -203,6 +211,7 @@ decl_error! {
 	}
 }
 
+//相当于数据库层定义的接口
 decl_storage! {
 	trait Store for Module<T: Trait> as TradeModule {
 		///	TradePairHash => TradePair
@@ -214,7 +223,7 @@ decl_storage! {
 		/// Index
 		TradePairsIndex get(fn trade_pair_index): u64;
 
-		/// OrderHash => Order
+		/// OrderHash => Order 根据订单号查订单
 		Orders get(fn order): map hasher(blake2_128_concat) T::Hash => Option<LimitOrder<T>>;
 		/// (AccoundId, Index) => OrderHash
 		OwnedOrders get(fn owned_order): map hasher(blake2_128_concat) (T::AccountId, u64) => Option<T::Hash>;
@@ -222,7 +231,7 @@ decl_storage! {
 		OwnedOrdersIndex get(fn owned_orders_index): map hasher(blake2_128_concat) T::AccountId => u64;
 		/// (OrderHash, u64) => TradeHash
 		OrderOwnedTrades get(fn order_owned_trades): map hasher(blake2_128_concat) (T::Hash, u64) => Option<T::Hash>;
-		/// (OrderHash, u64) => TradeHash
+		/// OrderHash => u64
 		OrderOwnedTradesIndex get(fn order_owned_trades_index): map hasher(blake2_128_concat) T::Hash => u64;
 
 		/// (TradePairHash, Index) => OrderHash
@@ -289,6 +298,7 @@ decl_event!(
 	}
 );
 
+//数据库层定义的具体实现
 impl<T: Trait> OrderOwnedTrades<T> {
     fn add_trade(order_hash: T::Hash, trade_hash: T::Hash) {
         let index = OrderOwnedTradesIndex::<T>::get(&order_hash);
@@ -382,12 +392,14 @@ impl<T: Trait> OwnedTPClosedOrders<T> {
     }
 }
 
+
+//相当于controller层定义的外部接口
 decl_module! {
 	pub struct Module<T: Trait> for enum Call where origin: T::Origin {
 		fn deposit_event() = default;
 
         type Error = Error<T>;
-
+        //创建交易对儿
 		#[weight = 1_000_000]
 		pub fn create_trade_pair(origin, base: T::Hash, quote: T::Hash) -> Result<(), dispatch::DispatchError> {
 			let sender = ensure_signed(origin)?;
@@ -395,6 +407,7 @@ decl_module! {
 			Self::do_create_trade_pair(sender, base, quote)
 		}
 
+        //下单?
 		#[weight = 1_000_000]
 		pub fn create_limit_order(origin, base: T::Hash, quote: T::Hash, otype: OrderType, price: T::Price, sell_amount: T::Balance) -> Result<(), dispatch::DispatchError> {
 			let sender = ensure_signed(origin)?;
@@ -402,6 +415,7 @@ decl_module! {
 			Self::do_create_limit_order(sender, base, quote, otype, price, sell_amount)
 		}
 
+        //创建订单
 		#[weight = 1_000_000]
 		pub fn create_limit_order_with_le_float(origin, base: T::Hash, quote: T::Hash, otype: OrderType, price: Vec<u8>, sell_amount: T::Balance) -> Result<(), dispatch::DispatchError> {
 			let sender = ensure_signed(origin)?;
@@ -410,6 +424,7 @@ decl_module! {
 			Self::do_create_limit_order(sender, base, quote, otype, price, sell_amount)
 		}
 
+        //取消订单
 		#[weight = 1_000_000]
 		pub fn cancel_limit_order(origin, order_hash: T::Hash) -> Result<(), dispatch::DispatchError> {
 			let sender = ensure_signed(origin)?;
@@ -417,6 +432,7 @@ decl_module! {
 			Self::do_cancel_limit_order(sender, order_hash)
 		}
 
+        //初始化
 		fn on_initialize(block_number: T::BlockNumber) -> Weight {
 			let days: T::BlockNumber = <<T as frame_system::Trait>::BlockNumber as From<_>>::from(T::BlocksPerDay::get());
 
@@ -494,6 +510,7 @@ decl_module! {
 	}
 }
 
+//业务层service层
 impl<T: Trait> Module<T> {
     fn ensure_bounds(price: T::Price, sell_amount: T::Balance) -> dispatch::DispatchResult {
         ensure!(price > Zero::zero() && price <= T::Price::max_value(), Error::<T>::BoundsCheckFailed);

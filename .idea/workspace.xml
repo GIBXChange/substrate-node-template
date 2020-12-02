@@ -15,7 +15,7 @@
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:dex" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
@@ -23,10 +23,10 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3bd2863-0b23-4a0f-a646-37a784d66004" name="Default Changelist" comment="add token test!!!">
-      <change beforePath="$PROJECT_DIR$/.idea/substrate-node-template.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/substrate-node-template.iml" afterDir="false" />
+    <list default="true" id="c3bd2863-0b23-4a0f-a646-37a784d66004" name="Default Changelist" comment="add trade">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pallets/trade/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/pallets/trade/src/lib.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pallets/trade/src/types.rs" beforeDir="false" afterPath="$PROJECT_DIR$/pallets/trade/src/types.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +117,21 @@
       <option name="project" value="LOCAL" />
       <updated>1606704765885</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add trade">
+      <created>1606824906763</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1606824906763</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add trade">
+      <created>1606872705375</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1606872705375</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -131,7 +145,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="master" />
+                        <option value="dex" />
                       </list>
                     </value>
                   </entry>
@@ -150,7 +164,8 @@
     <MESSAGE value="add token test" />
     <MESSAGE value="add token test!" />
     <MESSAGE value="add token test!!!" />
-    <option name="LAST_COMMIT_MESSAGE" value="add token test!!!" />
+    <MESSAGE value="add trade" />
+    <option name="LAST_COMMIT_MESSAGE" value="add trade" />
   </component>
   <component name="WindowStateProjectService">
     <state x="692" y="256" key="#com.intellij.ide.util.MemberChooser" timestamp="1606822887975">
@@ -181,10 +196,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="608" y="285" width="540" height="524" key="StructurePopup/0.0.2560.1400@0.0.2560.1400" timestamp="1606717208247" />
-    <state x="476" y="256" key="Vcs.Push.Dialog.v2" timestamp="1606704802717">
+    <state x="476" y="256" key="Vcs.Push.Dialog.v2" timestamp="1606872712640">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="476" y="256" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1606704802717" />
+    <state x="476" y="256" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1606872712640" />
     <state x="688" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606701556552">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
