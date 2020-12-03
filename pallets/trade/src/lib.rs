@@ -512,6 +512,8 @@ decl_module! {
 
 //业务层service层
 impl<T: Trait> Module<T> {
+
+    ///界限保证,保证价格和交易量大于零且小于最大值
     fn ensure_bounds(price: T::Price, sell_amount: T::Balance) -> dispatch::DispatchResult {
         ensure!(price > Zero::zero() && price <= T::Price::max_value(), Error::<T>::BoundsCheckFailed);
         ensure!(sell_amount > Zero::zero() && sell_amount <= T::Balance::max_value(), Error::<T>::BoundsCheckFailed);
@@ -563,6 +565,7 @@ impl<T: Trait> Module<T> {
         Self::from_128(result)
     }
 
+    ///校验交易对儿是否存在
     fn ensure_trade_pair(base: T::Hash, quote: T::Hash) -> result::Result<T::Hash, dispatch::DispatchError> {
         let bq = Self::trade_pair_hash_by_base_quote((base, quote));
         ensure!(bq.is_some(), Error::<T>::NoMatchingTradePair);
@@ -573,10 +576,11 @@ impl<T: Trait> Module<T> {
         }
     }
 
+    ///创建交易对儿
     fn do_create_trade_pair(sender: T::AccountId, base: T::Hash, quote: T::Hash) -> dispatch::DispatchResult {
 
         ensure!(base != quote, Error::<T>::BaseEqualQuote);
-
+        //币的所有者?撮合里面币的所有者是谁?
         let base_owner = <token::Module<T>>::owner(base);
         let quote_owner = <token::Module<T>>::owner(quote);
 
@@ -584,7 +588,7 @@ impl<T: Trait> Module<T> {
 
         let base_owner = base_owner.unwrap();
         let quote_owner = quote_owner.unwrap();
-
+        //创建交易对儿的必须是币种的所有者
         ensure!(sender == base_owner || sender == quote_owner, Error::<T>::SenderNotEqualToBaseOrQuoteOwner);
 
         let bq = Self::trade_pair_hash_by_base_quote((base, quote));
@@ -619,6 +623,9 @@ impl<T: Trait> Module<T> {
         Ok(())
     }
 
+
+    ///用户下限价单
+    /// sender:下单的账号,base:基础币,quote:引用币,otype:买卖方向,price:下单价格,sell_amount:下单量
     fn do_create_limit_order(sender: T::AccountId, base: T::Hash, quote: T::Hash, otype: OrderType, price: T::Price,
                              sell_amount: T::Balance) -> dispatch::DispatchResult {
 
@@ -635,11 +642,13 @@ impl<T: Trait> Module<T> {
 
         let mut order = LimitOrder::new(base, quote, sender.clone(), price, sell_amount, buy_amount, otype);
         let hash  = order.hash;
-
+        //检查用户的可用是否足够.
         <token::Module<T>>::ensure_free_balance(sender.clone(), op_token_hash, sell_amount)?;
+        //冻结用户资金
         <token::Module<T>>::do_freeze(sender.clone(), op_token_hash, sell_amount)?;
         Orders::insert(hash, order.clone());
         Nonce::mutate(|n| *n += 1);
+        //通知下单的事件
         Self::deposit_event(RawEvent::OrderCreated(sender.clone(), base, quote, hash, order.clone()));
         <OwnedTPOpenedOrders<T>>::add_order(sender.clone(), tp_hash, order.hash);
 
@@ -651,7 +660,7 @@ impl<T: Trait> Module<T> {
         TradePairOwnedOrders::<T>::insert((tp_hash, tp_owned_index), hash);
         TradePairOwnedOrdersIndex::<T>::insert(tp_hash, tp_owned_index + 1);
 
-        // order match
+        // order match,开始订单撮合
         let filled = Self::order_match(tp_hash, &mut order)?;
 
         // add order to the market order list
@@ -828,7 +837,7 @@ impl<T: Trait> Module<T> {
     fn from_128<A: TryFrom<u128>>(i: u128) -> Result<A, dispatch::DispatchError> {
         TryFrom::<u128>::try_from(i).map_err(|_| Error::<T>::NumberCastError.into())
     }
-
+    //计算交易的量
     fn calculate_ex_amount(maker_order: &LimitOrder<T>, taker_order: &LimitOrder<T>) -> result::Result<(T::Balance, T::Balance), dispatch::DispatchError> {
         let buyer_order;
         let seller_order;
@@ -943,6 +952,7 @@ impl<T: Trait> Module<T> {
         Ok(())
     }
 
+    //取消限价单
     fn do_cancel_limit_order(sender: T::AccountId, order_hash: T::Hash) -> dispatch::DispatchResult {
         let mut order = Self::order(order_hash).ok_or(Error::<T>::NoMatchingOrder)?;
 

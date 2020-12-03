@@ -23,10 +23,12 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3bd2863-0b23-4a0f-a646-37a784d66004" name="Default Changelist" comment="add trade">
+    <list default="true" id="c3bd2863-0b23-4a0f-a646-37a784d66004" name="Default Changelist" comment="add trade comments">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pallets/trade/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/pallets/trade/src/lib.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pallets/trade/src/types.rs" beforeDir="false" afterPath="$PROJECT_DIR$/pallets/trade/src/types.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/Cargo.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/src/lib.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +133,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606872705375</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add comment">
+      <created>1606911932228</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1606911932228</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -165,7 +174,9 @@
     <MESSAGE value="add token test!" />
     <MESSAGE value="add token test!!!" />
     <MESSAGE value="add trade" />
-    <option name="LAST_COMMIT_MESSAGE" value="add trade" />
+    <MESSAGE value="add comment" />
+    <MESSAGE value="add trade comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="add trade comments" />
   </component>
   <component name="WindowStateProjectService">
     <state x="692" y="256" key="#com.intellij.ide.util.MemberChooser" timestamp="1606822887975">
@@ -188,18 +199,22 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1709" height="281" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1606738625789" />
-    <state x="388" y="185" key="SettingsEditor" timestamp="1606707119566">
+    <state x="714" y="246" key="RollbackChangesDialog" timestamp="1606974829193">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="388" y="185" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1606707119566" />
-    <state x="608" y="285" width="540" height="524" key="StructurePopup" timestamp="1606717208247">
+    <state x="714" y="246" key="RollbackChangesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1606974829193" />
+    <state x="388" y="185" key="SettingsEditor" timestamp="1606990640405">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="608" y="285" width="540" height="524" key="StructurePopup/0.0.2560.1400@0.0.2560.1400" timestamp="1606717208247" />
-    <state x="476" y="256" key="Vcs.Push.Dialog.v2" timestamp="1606872712640">
+    <state x="388" y="185" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1606990640405" />
+    <state x="608" y="285" width="540" height="524" key="StructurePopup" timestamp="1606960512423">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="476" y="256" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1606872712640" />
+    <state x="608" y="285" width="540" height="524" key="StructurePopup/0.0.2560.1400@0.0.2560.1400" timestamp="1606960512423" />
+    <state x="476" y="256" key="Vcs.Push.Dialog.v2" timestamp="1606990538266">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="476" y="256" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1606990538266" />
     <state x="688" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606701556552">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
