@@ -23,10 +23,9 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3bd2863-0b23-4a0f-a646-37a784d66004" name="Default Changelist" comment="add trade comments">
+    <list default="true" id="c3bd2863-0b23-4a0f-a646-37a784d66004" name="Default Changelist" comment="add trade comments!!!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pallets/trade/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/pallets/trade/src/lib.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/runtime/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/Cargo.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/runtime/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/src/lib.rs" afterDir="false" />
     </list>
@@ -49,7 +48,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pallets/trade" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="org.rust.cargo.project.model.PROJECT_DISCOVERY" value="true" />
     <property name="settings.editor.selected.configurable" value="terminal" />
   </component>
@@ -143,6 +142,16 @@
     <option name="localTasksCounter" value="6" />
     <servers />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -176,33 +185,38 @@
     <MESSAGE value="add trade" />
     <MESSAGE value="add comment" />
     <MESSAGE value="add trade comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="add trade comments" />
+    <MESSAGE value="add trade comments!!!" />
+    <option name="LAST_COMMIT_MESSAGE" value="add trade comments!!!" />
   </component>
   <component name="WindowStateProjectService">
     <state x="692" y="256" key="#com.intellij.ide.util.MemberChooser" timestamp="1606822887975">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="692" y="256" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1606822887975" />
-    <state width="1709" height="281" key="GridCell.Tab.0.bottom" timestamp="1606738625789">
+    <state x="103" y="154" width="1569" height="847" key="DiffContextDialog" timestamp="1606992998942">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1709" height="281" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1606738625789" />
-    <state width="1709" height="281" key="GridCell.Tab.0.center" timestamp="1606738625789">
+    <state x="103" y="154" width="1569" height="847" key="DiffContextDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1606992998942" />
+    <state width="1709" height="281" key="GridCell.Tab.0.bottom" timestamp="1606992998915">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1709" height="281" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1606738625789" />
-    <state width="1709" height="281" key="GridCell.Tab.0.left" timestamp="1606738625789">
+    <state width="1709" height="281" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1606992998915" />
+    <state width="1709" height="281" key="GridCell.Tab.0.center" timestamp="1606992998915">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1709" height="281" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1606738625789" />
-    <state width="1709" height="281" key="GridCell.Tab.0.right" timestamp="1606738625789">
+    <state width="1709" height="281" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1606992998915" />
+    <state width="1709" height="281" key="GridCell.Tab.0.left" timestamp="1606992998915">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1709" height="281" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1606738625789" />
-    <state x="714" y="246" key="RollbackChangesDialog" timestamp="1606974829193">
+    <state width="1709" height="281" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1606992998915" />
+    <state width="1709" height="281" key="GridCell.Tab.0.right" timestamp="1606992998915">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="714" y="246" key="RollbackChangesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1606974829193" />
+    <state width="1709" height="281" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1606992998915" />
+    <state x="714" y="246" key="RollbackChangesDialog" timestamp="1606992898774">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="714" y="246" key="RollbackChangesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1606992898774" />
     <state x="388" y="185" key="SettingsEditor" timestamp="1606990640405">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

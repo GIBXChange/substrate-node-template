@@ -38,8 +38,12 @@ pub use frame_support::{
 	},
 };
 
+/// Importing a template pallet
+// pub use token;
+pub use trade;
+
 /// Import the template pallet.
-// pub use pallet_template;
+pub use pallet_template;
 
 /// An index to a block.
 pub type BlockNumber = u32;
@@ -92,8 +96,8 @@ pub mod opaque {
 }
 
 pub const VERSION: RuntimeVersion = RuntimeVersion {
-	spec_name: create_runtime_str!("node-template"),
-	impl_name: create_runtime_str!("node-template"),
+	spec_name: create_runtime_str!("substrate-dex"),
+	impl_name: create_runtime_str!("substrate-dex"),
 	authoring_version: 1,
 	spec_version: 1,
 	impl_version: 1,

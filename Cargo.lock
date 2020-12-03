@@ -3383,6 +3383,7 @@ dependencies = [
  "pallet-grandpa",
  "pallet-randomness-collective-flip 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "pallet-sudo",
+ "pallet-template",
  "pallet-timestamp",
  "pallet-token",
  "pallet-trade",
