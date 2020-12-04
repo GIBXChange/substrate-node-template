@@ -38,12 +38,12 @@ pub use frame_support::{
 	},
 };
 
-/// Importing a template pallet
-// pub use token;
-pub use trade;
-
 /// Import the template pallet.
 pub use pallet_template;
+
+/// Importing a template pallet
+pub use token;
+pub use trade;
 
 /// An index to a block.
 pub type BlockNumber = u32;
@@ -265,6 +265,19 @@ impl pallet_sudo::Trait for Runtime {
 	type Call = Call;
 }
 
+impl token::Trait for Runtime {
+	type Event = Event;
+}
+
+// impl trade::Trait for Runtime {
+// 	type Event = Event;
+// 	type Price = u128;
+// 	type PriceFactor = PriceFactor;
+// 	type BlocksPerDay = BlocksPerDay;
+// 	type OpenedOrdersArrayCap = OpenedOrdersArrayCap;
+// 	type ClosedOrdersArrayCap = ClosedOrdersArrayCap;
+// }
+
 /// Configure the template pallet in pallets/template.
 impl pallet_template::Trait for Runtime {
 	type Event = Event;
@@ -287,6 +300,8 @@ construct_runtime!(
 		Sudo: pallet_sudo::{Module, Call, Config<T>, Storage, Event<T>},
 		// Include the custom logic from the template pallet in the runtime.
 		TemplateModule: pallet_template::{Module, Call, Storage, Event<T>},
+		TokenModule: token::{Module, Call, Storage, Event<T>},
+		// TradeModule: trade::{Module, Call, Storage, Event<T>},
 	}
 );
 

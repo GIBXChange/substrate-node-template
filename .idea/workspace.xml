@@ -23,9 +23,12 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3bd2863-0b23-4a0f-a646-37a784d66004" name="Default Changelist" comment="add trade comments!!!">
+    <list default="true" id="c3bd2863-0b23-4a0f-a646-37a784d66004" name="Default Changelist" comment="bug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pallets/token/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pallets/token/Cargo.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pallets/trade/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pallets/trade/Cargo.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/runtime/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/Cargo.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/runtime/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/src/lib.rs" afterDir="false" />
     </list>
@@ -139,7 +142,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606911932228</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="bug">
+      <created>1606998636575</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1606998636575</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -186,7 +196,8 @@
     <MESSAGE value="add comment" />
     <MESSAGE value="add trade comments" />
     <MESSAGE value="add trade comments!!!" />
-    <option name="LAST_COMMIT_MESSAGE" value="add trade comments!!!" />
+    <MESSAGE value="bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="bug" />
   </component>
   <component name="WindowStateProjectService">
     <state x="692" y="256" key="#com.intellij.ide.util.MemberChooser" timestamp="1606822887975">
@@ -221,14 +232,14 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="388" y="185" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1606990640405" />
-    <state x="608" y="285" width="540" height="524" key="StructurePopup" timestamp="1606960512423">
+    <state x="608" y="285" width="540" height="524" key="StructurePopup" timestamp="1607056415487">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="608" y="285" width="540" height="524" key="StructurePopup/0.0.2560.1400@0.0.2560.1400" timestamp="1606960512423" />
-    <state x="476" y="256" key="Vcs.Push.Dialog.v2" timestamp="1606990538266">
+    <state x="608" y="285" width="540" height="524" key="StructurePopup/0.0.2560.1400@0.0.2560.1400" timestamp="1607056415487" />
+    <state x="476" y="256" key="Vcs.Push.Dialog.v2" timestamp="1606998639827">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="476" y="256" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1606990538266" />
+    <state x="476" y="256" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1606998639827" />
     <state x="688" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606701556552">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
