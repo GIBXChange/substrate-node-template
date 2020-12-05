@@ -39,7 +39,7 @@ pub use frame_support::{
 };
 
 /// Import the template pallet.
-pub use pallet_template;
+// pub use pallet_template;
 
 /// Importing a template pallet
 pub use token;
@@ -250,6 +250,10 @@ impl pallet_balances::Trait for Runtime {
 
 parameter_types! {
 	pub const TransactionByteFee: Balance = 1;
+	pub const PriceFactor: u128 = 100_000_000;
+    pub const BlocksPerDay: u32 = 6 * 60 * 24;
+    pub const OpenedOrdersArrayCap: u8 = 20;
+    pub const ClosedOrdersArrayCap: u8 = 100;
 }
 
 impl pallet_transaction_payment::Trait for Runtime {
@@ -269,19 +273,19 @@ impl token::Trait for Runtime {
 	type Event = Event;
 }
 
-// impl trade::Trait for Runtime {
-// 	type Event = Event;
-// 	type Price = u128;
-// 	type PriceFactor = PriceFactor;
-// 	type BlocksPerDay = BlocksPerDay;
-// 	type OpenedOrdersArrayCap = OpenedOrdersArrayCap;
-// 	type ClosedOrdersArrayCap = ClosedOrdersArrayCap;
-// }
+impl trade::Trait for Runtime {
+	type Event = Event;
+	type Price = u128;
+	type PriceFactor = PriceFactor;
+	type BlocksPerDay = BlocksPerDay;
+	type OpenedOrdersArrayCap = OpenedOrdersArrayCap;
+	type ClosedOrdersArrayCap = ClosedOrdersArrayCap;
+}
 
 /// Configure the template pallet in pallets/template.
-impl pallet_template::Trait for Runtime {
-	type Event = Event;
-}
+// impl pallet_template::Trait for Runtime {
+// 	type Event = Event;
+// }
 
 // Create the runtime by composing the FRAME pallets that were previously configured.
 construct_runtime!(
@@ -299,9 +303,9 @@ construct_runtime!(
 		TransactionPayment: pallet_transaction_payment::{Module, Storage},
 		Sudo: pallet_sudo::{Module, Call, Config<T>, Storage, Event<T>},
 		// Include the custom logic from the template pallet in the runtime.
-		TemplateModule: pallet_template::{Module, Call, Storage, Event<T>},
+		// TemplateModule: pallet_template::{Module, Call, Storage, Event<T>},
 		TokenModule: token::{Module, Call, Storage, Event<T>},
-		// TradeModule: trade::{Module, Call, Storage, Event<T>},
+		TradeModule: trade::{Module, Call, Storage, Event<T>},
 	}
 );
 

@@ -23,12 +23,17 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3bd2863-0b23-4a0f-a646-37a784d66004" name="Default Changelist" comment="bug">
+    <list default="true" id="c3bd2863-0b23-4a0f-a646-37a784d66004" name="Default Changelist" comment="add token trade to runtime">
+      <change afterPath="$PROJECT_DIR$/debug.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/developer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pallets/token/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pallets/token/Cargo.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pallets/trade/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pallets/trade/Cargo.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/node/Cargo.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node/src/chain_spec.rs" beforeDir="false" afterPath="$PROJECT_DIR$/node/src/chain_spec.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node/src/command.rs" beforeDir="false" afterPath="$PROJECT_DIR$/node/src/command.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node/src/rpc.rs" beforeDir="false" afterPath="$PROJECT_DIR$/node/src/rpc.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node/src/service.rs" beforeDir="false" afterPath="$PROJECT_DIR$/node/src/service.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/runtime/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/Cargo.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/runtime/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/src/lib.rs" afterDir="false" />
     </list>
@@ -57,6 +62,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\development\rust\substrate-node-template" />
       <recent name="D:\development\rust\substrate-node-template\pallets\trade" />
       <recent name="D:\development\rust\substrate-node-template\pallets\token\src" />
       <recent name="D:\development\rust\substrate-node-template\pallets\token" />
@@ -149,7 +155,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606998636575</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add token trade to runtime">
+      <created>1607056583710</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1607056583710</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -197,9 +210,14 @@
     <MESSAGE value="add trade comments" />
     <MESSAGE value="add trade comments!!!" />
     <MESSAGE value="bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="bug" />
+    <MESSAGE value="add token trade to runtime" />
+    <option name="LAST_COMMIT_MESSAGE" value="add token trade to runtime" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="759" y="408" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1607132769712">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="759" y="408" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1607132769712" />
     <state x="692" y="256" key="#com.intellij.ide.util.MemberChooser" timestamp="1606822887975">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -232,18 +250,22 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="388" y="185" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1606990640405" />
-    <state x="608" y="285" width="540" height="524" key="StructurePopup" timestamp="1607056415487">
+    <state x="608" y="285" width="540" height="524" key="StructurePopup" timestamp="1607150692756">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="608" y="285" width="540" height="524" key="StructurePopup/0.0.2560.1400@0.0.2560.1400" timestamp="1607056415487" />
-    <state x="476" y="256" key="Vcs.Push.Dialog.v2" timestamp="1606998639827">
+    <state x="608" y="285" width="540" height="524" key="StructurePopup/0.0.2560.1400@0.0.2560.1400" timestamp="1607150692756" />
+    <state x="476" y="256" key="Vcs.Push.Dialog.v2" timestamp="1607056589491">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="476" y="256" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1606998639827" />
+    <state x="476" y="256" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1607056589491" />
     <state x="688" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606701556552">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="688" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1606701556552" />
+    <state x="615" y="292" width="619" height="536" key="find.popup" timestamp="1607146588415">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="615" y="292" width="619" height="536" key="find.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1607146588415" />
     <state x="550" y="247" width="672" height="678" key="search.everywhere.popup" timestamp="1606816414904">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
