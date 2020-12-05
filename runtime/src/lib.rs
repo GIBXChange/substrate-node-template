@@ -282,7 +282,7 @@ impl trade::Trait for Runtime {
 	type ClosedOrdersArrayCap = ClosedOrdersArrayCap;
 }
 
-/// Configure the template pallet in pallets/template.
+// Configure the template pallet in pallets/template.
 // impl pallet_template::Trait for Runtime {
 // 	type Event = Event;
 // }

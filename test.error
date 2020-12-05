@@ -1,0 +1,3 @@
+1002: Verification Error: Execution: Could not convert parameter `tx` between node and runtime:
+No such variant in enum MultiSignature: RuntimeApi, Execution: Could not convert parameter `tx` between node and runtime:
+No such variant in enum MultiSignature
